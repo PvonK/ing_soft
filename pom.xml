@@ -581,7 +581,7 @@
                             </platforms>
                         </from>
                         <to>
-                            <image>library:latest</image>
+                            <image>pvonk/library:latest</image>
                             <tags>
                                 <tag>${project.version}</tag>
                                 <tag>latest</tag>
