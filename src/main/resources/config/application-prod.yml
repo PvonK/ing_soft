@@ -86,6 +86,13 @@ server:
 # ===================================================================
 
 jhipster:
+  cors:
+    allowed-origins: 'http://localhost:3000,http://localhost:8100,https://localhost:8100,http://localhost:9000,https://localhost:9000,http://localhost:4200,https://localhost:4200,https://localhost:8001'
+    allowed-methods: '*'
+    allowed-headers: '*'
+    exposed-headers: '*'
+    allow-credentials: true
+    max-age: 1800
   http:
     cache: # Used by the CachingHttpHeadersFilter
       timeToLiveInDays: 1461
