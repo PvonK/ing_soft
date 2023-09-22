@@ -104,6 +104,16 @@ describe('Author e2e test', () => {
         cy.wait('@entitiesRequestInternal');
       });
 
+      // test mio --final
+      it('show book button click should load Books page', () => {
+        cy.get('[data-cy="filterOtherEntityButton"]').first().click();
+
+        const bookPageUrlPattern = new RegExp('/book(\\?.*)?$');
+        cy.url().should('match', bookPageUrlPattern);
+        cy.go('back');
+        cy.url().should('match', authorPageUrlPattern);
+      });
+
       it('detail button click should load details Author page', () => {
         cy.get(entityDetailsButtonSelector).first().click();
         cy.getEntityDetailsHeading('author');

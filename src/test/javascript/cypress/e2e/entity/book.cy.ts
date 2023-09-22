@@ -104,6 +104,17 @@ describe('Book e2e test', () => {
         cy.wait('@entitiesRequestInternal');
       });
 
+      // test mio --final
+      it('id click should load details Book page', () => {
+        cy.get(`a[href*="/book/${book.id}/view"]`).first().click();
+        cy.getEntityDetailsHeading('book');
+        cy.get(entityDetailsBackButtonSelector).click();
+        cy.wait('@entitiesRequest').then(({ response }) => {
+          expect(response.statusCode).to.equal(200);
+        });
+        cy.url().should('match', bookPageUrlPattern);
+      });
+
       it('detail button click should load details Book page', () => {
         cy.get(entityDetailsButtonSelector).first().click();
         cy.getEntityDetailsHeading('book');

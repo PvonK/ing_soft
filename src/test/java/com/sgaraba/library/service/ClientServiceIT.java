@@ -5,8 +5,8 @@ import static org.mockito.Mockito.when;
 
 import com.sgaraba.library.IntegrationTest;
 import com.sgaraba.library.config.Constants;
-import com.sgaraba.library.domain.User;
-import com.sgaraba.library.repository.UserRepository;
+import com.sgaraba.library.domain.Client;
+import com.sgaraba.library.repository.ClientRepository;
 import com.sgaraba.library.service.dto.AdminUserDTO;
 import java.time.Instant;
 import java.time.LocalDateTime;
@@ -26,7 +26,7 @@ import org.springframework.transaction.annotation.Transactional;
 import tech.jhipster.security.RandomUtil;
 
 /**
- * Integration tests for {@link UserService}.
+ * Integration tests for {@link ClientService}.
  */
 @IntegrationTest
 @Transactional
